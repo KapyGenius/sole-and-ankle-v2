@@ -36,6 +36,16 @@ const ShoeCard = ({
       <Wrapper>
         <ImageWrapper>
           <Image alt="" src={imageSrc} />
+          {variant === 'on-sale' && (
+            <VariantWrapper variant="on-sale">
+              Sale
+            </VariantWrapper>)
+          }
+          {variant === 'new-release' && (
+            <VariantWrapper variant="new-release">
+              Just Released
+            </VariantWrapper>
+          )}
         </ImageWrapper>
         <Spacer size={12} />
         <Row>
@@ -50,6 +60,15 @@ const ShoeCard = ({
   );
 };
 
+const VariantWrapper = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: ${({ variant }) =>
+    variant === 'on-sale' ? COLORS.primary : COLORS.secondary};
+  color: ${COLORS.white};
+  padding: 4px 8px;
+`;
 const Link = styled.a`
   text-decoration: none;
   color: inherit;
@@ -61,7 +80,9 @@ const ImageWrapper = styled.div`
   position: relative;
 `;
 
-const Image = styled.img``;
+const Image = styled.img`
+  width: 100%;
+`;
 
 const Row = styled.div`
   font-size: 1rem;
