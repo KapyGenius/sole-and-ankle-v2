@@ -68,6 +68,7 @@ const VariantWrapper = styled.div`
     variant === 'on-sale' ? COLORS.primary : COLORS.secondary};
   color: ${COLORS.white};
   padding: 4px 8px;
+  border-radius: 4px;
 `;
 const Link = styled.a`
   text-decoration: none;
@@ -82,6 +83,7 @@ const ImageWrapper = styled.div`
 
 const Image = styled.img`
   width: 100%;
+  border-radius: 16px 16px 4px 4px;
 `;
 
 const Row = styled.div`
